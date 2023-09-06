@@ -51,7 +51,7 @@ class AuthController extends Controller
                 ->withSuccess('You have Successfully loggedin');
         }
 
-        return redirect("login")->withSuccess('Oppes! You have entered invalid credentials');
+        return redirect("login")->withSuccess('3');
     }
 
     /**
@@ -74,7 +74,7 @@ class AuthController extends Controller
             return view('dashboard');
         } else {
             // return view('auth.registration');
-            return redirect("login")->withSuccess('Great! You have Successfully loggedin');
+            return redirect("login")->withSuccess('1');
         }
 
         // return redirect("dashboard")-> withSuccess('Great! You have Successfully loggedin');
@@ -91,7 +91,7 @@ class AuthController extends Controller
             return view('dashboard');
         } else {
             // return view('auth.registration');
-            return redirect("auth.login")->withSuccess('Opps! You do not have access');
+            return redirect("auth.login")->withSuccess('2');
         }
     }
 

@@ -1,3 +1,9 @@
+<?php
+
+var_dump(session('success'));
+
+?>
+
 @extends('layout')
 
 @section('content')
@@ -8,11 +14,21 @@
                 <div class="card">
                     <div class="card-header">Login</div>
                     <div class="card-body">
-                        @if (session('success'))
-                        <div class="alert alert-primary" role="alert">
-                            {{ session('success') }}
-                        </div>
+                        @if (session('success') == 1)
+
+                        <div class="alert alert-success" role="alert">Great! You have Successfully loggedin</div>
+
                         @endif
+
+                        @if (session('success') == 2)
+                        <div class="alert alert-danger" role="alert">Opps! You do not have access</div>
+                        @endif
+
+                        @if (session('success') == 3)
+                        <div class="alert alert-danger" role="alert">Oppes! You have entered invalid credentials</div>
+                        @endif
+
+
                         <form action="{{ route('login.post') }}" method="POST">
                             @csrf
                             <div class="form-group row">
