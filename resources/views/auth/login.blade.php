@@ -1,9 +1,3 @@
-<?php
-
-var_dump(session('success'));
-
-?>
-
 @extends('layout')
 
 @section('content')
